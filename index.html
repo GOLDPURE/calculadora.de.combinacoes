@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Combinações</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="calculator-container">
+    <div class="calculator">
         <h1>Calculadora de Combinações</h1>
+        <label for="n">Digite n (número de elementos):</label>
+        <input type="number" id="n" placeholder="Valor de n" required>
 
-        <label for="n">Digite o valor de n:</label>
-        <input type="number" id="n" placeholder="Valor de n">
+        <label for="p">Digite p (número de elementos tomados):</label>
+        <input type="number" id="p" placeholder="Valor de p" required>
 
-        <label for="p">Digite o valor de p:</label>
-        <input type="number" id="p" placeholder="Valor de p">
+        <button onclick="calcularCombinacao()">Calcular</button>
 
-        <button onclick="calcularCombinacoes()">Calcular</button>
-
-        <h2 id="resultado">Resultado: </h2>
+        <h2>Resultado: <span id="resultado">0</span></h2>
     </div>
 
     <script src="script.js"></script>
