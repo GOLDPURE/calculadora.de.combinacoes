@@ -1,28 +1,28 @@
-// Função para calcular o fatorial de um número
-function fatorial(n) {
-    if (n === 0 || n === 1) {
-        return 1;
-    }
-    let resultado = 1;
-    for (let i = 2; i <= n; i++) {
-        resultado *= i;
-    }
-    return resultado;
-}
-
-// Função para calcular a combinação
-function calcularCombinacao() {
+function calcularCombinacoes() {
     const n = parseInt(document.getElementById('n').value);
     const p = parseInt(document.getElementById('p').value);
+    const resultadoElemento = document.getElementById('resultado');
 
-    if (isNaN(n) || isNaN(p) || n < 0 || p < 0 || p > n) {
-        alert("Por favor, insira valores válidos para n e p.");
+    if (isNaN(n) || isNaN(p) || n < 0 || p < 0 || n < p) {
+        resultadoElemento.innerText = 'Por favor, insira valores válidos para n e p.';
         return;
     }
 
-    // Calculando a combinação usando a fórmula C(n, p) = n! / (p!(n-p)!)
-    const combinacao = fatorial(n) / (fatorial(p) * fatorial(n - p));
+    const resultado = combinacao(n, p);
+    resultadoElemento.innerText = `Resultado: ${resultado}`;
+}
 
-    // Exibindo o resultado
-    document.getElementById('resultado').textContent = combinacao;
+function combinacao(n, p) {
+    return fatorial(n) / (fatorial(p) * fatorial(n - p));
+}
+
+function fatorial(num) {
+    if (num === 0 || num === 1) {
+        return 1;
+    }
+    let resultado = 1;
+    for (let i = 2; i <= num; i++) {
+        resultado *= i;
+    }
+    return resultado;
 }
