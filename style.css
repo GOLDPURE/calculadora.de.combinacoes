@@ -1,4 +1,9 @@
-body {
+    body {
+    background: linear-gradient(to right, #00aaff, #003366);
+    height: 100vh; /* Garante que o fundo ocupe toda a altura da tela */
+    margin: 0; /* Remove as margens padrão */
+}
+
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
